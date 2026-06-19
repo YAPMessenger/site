@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8K5G3J4Y8X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8K5G3J4Y8X');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>YAP</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='50' dominant-baseline='central' text-anchor='middle' font-size='80'>🙄</text></svg>">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=DM+Mono:wght@300;400;500&display=swap');
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --black: #050505;
+  --gold: #ffd93d;
+  --gold-soft: rgba(255, 217, 61, 0.07);
+  --gold-glow: rgba(255, 217, 61, 0.14);
+  --white: #e4e4e4;
+  --mid: #777;
+  --dim: #444;
+  --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --mono: 'DM Mono', 'Courier New', monospace;
+}
+
+html { scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: rgba(255,217,61,0.15) transparent; }
+body { background: var(--black); color: var(--white); font-family: var(--serif); overflow-x: hidden; -webkit-font-smoothing: antialiased; opacity: 0; transition: opacity 0.4s ease; }
+body.fonts-loaded { opacity: 1; }
+::selection { background: var(--gold); color: var(--black); }
+
+body::after {
+  content: ''; position: fixed; inset: 0; z-index: 10000; pointer-events: none; opacity: 0.03;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+
+@keyframes riseIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes expandLine { from { width: 0; opacity: 0; } to { width: 280px; opacity: 0.25; } }
+@keyframes breathe { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.5; } }
+@keyframes glowPulse { 0%, 100% { opacity: 0.1; transform: translate(-50%, -55%) scale(1); } 50% { opacity: 0.2; transform: translate(-50%, -55%) scale(1.06); } }
+@keyframes cursorBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes dotPulse { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.6; } }
+
+/* Reveal — starts hidden, JS adds .visible on scroll */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1), transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ════════ HERO ════════ */
+.hero {
+  min-height: 100svh; min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center;
+  padding: 60px 32px 40px; position: relative;
+}
+.hero-spacer-top { flex: 1; }
+.hero-spacer-bottom { flex: 1; }
+.hero-glow {
+  position: absolute; width: 520px; height: 520px; border-radius: 50%;
+  background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+  top: 50%; left: 50%; transform: translate(-50%, -55%);
+  pointer-events: none; animation: glowPulse 7s ease-in-out infinite;
+  z-index: 0;
+}
+.hero-emoji { font-size: 56px; line-height: 1; margin-bottom: 28px; position: relative; z-index: 2; animation: riseIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both; }
+.hero-wordmark {
+  font-family: var(--mono); font-size: 14px; font-weight: 500;
+  letter-spacing: 14px; text-transform: uppercase; color: var(--gold);
+  margin-bottom: 72px; padding-left: 14px;
+  animation: riseIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
+.hero-rule { width: 280px; height: 1px; background: var(--gold); margin-bottom: 72px; animation: expandLine 1s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both; }
+.hero-statement {
+  font-size: clamp(22px, 3.6vw, 38px); font-weight: 300;
+  line-height: 1.5; letter-spacing: -0.1px; max-width: 760px;
+  animation: riseIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.75s both;
+}
+.hero-statement em {
+  font-style: italic; color: var(--gold);
+  font-size: clamp(28px, 4.6vw, 48px);
+  display: block; margin-top: 10px; letter-spacing: -0.3px;
+}
+.shimmer-text {
+  background: linear-gradient(90deg, var(--gold) 70%, #fff8e0 90%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ════════ PASSAGE ════════ */
+.passage { display: flex; justify-content: center; align-items: center; padding: 120px 32px; }
+.passage.short { padding: 80px 32px; }
+.passage-text {
+  font-size: clamp(19px, 2.8vw, 27px); font-weight: 300;
+  line-height: 1.85; max-width: 600px; text-align: center; color: var(--mid);
+}
+.passage-text strong { color: var(--white); font-weight: 400; }
+.passage-text .gold { color: var(--gold); font-weight: 400; }
+
+/* ════════ DOT DIVIDER ════════ */
+.dot-break { display: flex; justify-content: center; padding: 8px 0; }
+.dot-break span { width: 3px; height: 3px; border-radius: 50%; background: var(--gold); animation: dotPulse 3.5s ease-in-out infinite; }
+
+/* ════════ FOUNDATIONS ════════ */
+.foundations { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 160px 32px; }
+.foundations-label { font-family: var(--mono); font-size: 13px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); opacity: 0.55; margin-bottom: 88px; }
+.foundations-list { display: flex; flex-direction: column; gap: 72px; max-width: 500px; width: 100%; }
+.foundation-num { font-family: var(--mono); font-size: 10px; color: var(--gold); letter-spacing: 2px; opacity: 0.5; margin-bottom: 14px; }
+.foundation-title { font-size: clamp(22px, 3.2vw, 30px); font-weight: 400; letter-spacing: -0.4px; margin-bottom: 14px; color: var(--white); }
+.foundation-body { font-size: 15px; font-weight: 300; line-height: 1.85; color: var(--mid); }
+.foundation-body strong { color: var(--white); font-weight: 400; }
+
+/* ════════ CLOSE ════════ */
+.close-section { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 160px 32px; position: relative; }
+.close-glow {
+  position: absolute; width: 380px; height: 380px; border-radius: 50%;
+  background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  opacity: 0.06; filter: blur(100px); pointer-events: none; animation: glowPulse 9s ease-in-out infinite;
+}
+.close-emoji { font-size: 40px; margin-bottom: 44px; }
+.close-headline { font-size: clamp(30px, 5vw, 58px); font-weight: 300; letter-spacing: -0.8px; line-height: 1.25; margin-bottom: 28px; }
+.close-headline .gold { color: var(--gold); }
+.close-sub { font-size: 15px; font-weight: 300; color: var(--dim); line-height: 1.8; max-width: 380px; margin-bottom: 72px; }
+.close-sub strong { color: var(--mid); font-weight: 400; }
+.email-link {
+  display: inline-flex; align-items: center; padding: 20px 40px;
+  background: transparent; border: 1px solid rgba(255, 217, 61, 0.18);
+  border-radius: 3px; color: var(--gold); font-family: var(--mono);
+  font-size: 13px; font-weight: 400; letter-spacing: 0.8px;
+  text-decoration: none; transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative; z-index: 2; cursor: pointer;
+}
+.email-link:hover { background: var(--gold); color: var(--black); border-color: var(--gold); box-shadow: 0 0 48px var(--gold-glow); letter-spacing: 1.5px; }
+.email-cursor { display: none; }
+
+/* ════════ FOOTER ════════ */
+.site-footer { padding: 44px 32px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.03); max-width: 800px; margin: 0 auto; width: 100%; }
+.footer-sig { font-family: var(--mono); font-size: 10px; color: var(--dim); letter-spacing: 0.8px; display: flex; align-items: center; gap: 8px; }
+.footer-sig .f-emoji { font-size: 13px; }
+.footer-platform { font-family: var(--mono); font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; }
+.footer-platform a { color: rgba(255,255,255,0.12); text-decoration: none; transition: color 0.3s ease; }
+.footer-platform a:hover { color: var(--gold); }
+
+/* ════════ RESPONSIVE ════════ */
+@media (max-width: 640px) {
+  .hero { padding: 20px 20px 30px; }
+  .hero-emoji { font-size: 48px; margin-bottom: 20px; padding-top: 4px; position: relative; z-index: 2; }
+  .hero-spacer-top { min-height: 0; }
+  .hero-spacer-bottom { flex: 1; }
+  .hero-wordmark { letter-spacing: 14px; padding-left: 14px; font-size: 15px; margin-bottom: 40px; }
+  .hero-rule { margin-bottom: 40px; width: 200px; }
+  .dot-break-first { margin-top: -60px; }
+  .passage { padding: 100px 24px; }
+  .passage.short { padding: 100px 24px; }
+  .foundations { padding: 100px 24px; }
+  .foundations-label { margin-bottom: 60px; }
+  .foundations-list { gap: 56px; }
+  .close-section { padding: 100px 24px; }
+  .email-link { padding: 16px 28px; font-size: 11px; }
+  .site-footer { flex-direction: column; gap: 12px; text-align: center; padding: 32px 20px; }
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-spacer-top"></div>
+  <div class="hero-emoji" id="brand-emoji" style="cursor:grab;user-select:none;-webkit-user-select:none;touch-action:none;min-width:60px;min-height:60px;display:flex;align-items:center;justify-content:center;padding:8px;">🙄</div>
+  <div class="hero-wordmark">Yap</div>
+  <div class="hero-rule"></div>
+  <h1 class="hero-statement">
+    A messaging app built around one idea:<br>
+    <em>every relationship deserves its own<br>visual identity</em>
+  </h1>
+  <div class="hero-spacer-bottom"></div>
+</section>
+
+<div class="dot-break dot-break-first"><span></span></div>
+
+<section class="passage">
+  <p class="passage-text reveal-item">
+    Right now, a conversation with your manager <strong>looks and feels the same</strong> as a conversation with a person you've known your entire life.
+  </p>
+</section>
+
+<div class="dot-break"><span></span></div>
+
+<section class="passage">
+  <p class="passage-text reveal-item">
+    A three-month acquaintance is visually <strong>indistinguishable</strong> from a life-partner.
+  </p>
+</section>
+
+<div class="dot-break"><span></span></div>
+
+<section class="passage short">
+  <p class="passage-text reveal-item">
+    We thought that was <strong>worth fixing.</strong>
+  </p>
+</section>
+
+<div class="dot-break"><span></span></div>
+
+<section class="passage">
+  <p class="passage-text reveal-item">
+    YAP lets you assign a <strong>distinct visual identity</strong> to every conversation — independent colors, typography, animations, layout, and hundreds of other visual properties — so the interface itself reflects the nature of the relationship.
+  </p>
+</section>
+
+<div class="dot-break"><span></span></div>
+
+<section class="foundations">
+  <div class="foundations-label reveal-item">Three pillars</div>
+  <div class="foundations-list">
+    <div class="reveal-item">
+      <div class="foundation-num">01</div>
+      <div class="foundation-title">Universal customization</div>
+      <div class="foundation-body"><strong>Every visual element is yours to change.</strong> Tinker with colors, typography, animations, patterns, layout, spacing, shapes, and countless other granular customization properties. Opinionated defaults, unlimited overrides.</div>
+    </div>
+    <div class="reveal-item">
+      <div class="foundation-num">02</div>
+      <div class="foundation-title">Per-relationship identity</div>
+      <div class="foundation-body">The core idea. <strong>Each conversation can have its own visual identity, independent of the global theme.</strong> Neon gradients and an uploaded background image for that chat interface with your best friend. A stiff and stale theme for that one work group you don't want to be a part of. Clean monochrome for that legend. Every customization is private and one-sided — the other person never sees what you've chosen, unless you want them to.</div>
+    </div>
+    <div class="reveal-item">
+      <div class="foundation-num">03</div>
+      <div class="foundation-title">Local-first data</div>
+      <div class="foundation-body">Messages are encrypted E2E with Signal. Our servers are a transit hub for your encrypted messages, not a storage facility. Most of your data is stored locally on your device. The only data we hold onto is your account credentials — in case you forget your password. Your themes, per-relationship identities, and styling are private by default and never accessible to our servers unless you publish them. <strong>We want you to own and hold your data.</strong></div>
+    </div>
+  </div>
+</section>
+
+<div class="dot-break"><span></span></div>
+
+<section class="close-section">
+  <div class="close-glow"></div>
+  <h2 class="close-headline reveal-item">Coming <span class="gold">soon</span>.</h2>
+  <p class="close-sub reveal-item">
+    <strong>iOS and Android.</strong><br>
+    <span style="font-family:var(--mono); font-size:8px; letter-spacing:3px; text-transform:uppercase; color:var(--dim);">AI agnostic.</span>
+  </p>
+  <a id="email-cta" class="email-link reveal-item">
+    <span id="email-text"></span><span class="email-cursor"></span>
+  </a>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-sig">
+    <span class="f-emoji">🙄</span>
+    <span>&copy; 2026 YAP</span>
+  </div>
+  <div class="footer-platform"><a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a> &middot; <a href="/faq.html">FAQ</a></div>
+</footer>
+
+<script>
+(function() {
+  // Wait for fonts then reveal
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function() { document.body.classList.add('fonts-loaded'); });
+  } else {
+    setTimeout(function() { document.body.classList.add('fonts-loaded'); }, 500);
+  }
+  // Failsafe — show after 2s no matter what
+  setTimeout(function() { document.body.classList.add('fonts-loaded'); }, 2000);
+  var u = 'contact';
+  var d = 'yap-messenger' + '.com';
+  var addr = u + '@' + d;
+  var el = document.getElementById('email-text');
+  var link = document.getElementById('email-cta');
+  if (el) el.textContent = addr;
+  if (link) link.href = 'mai' + 'lto:' + addr + '?subject=' + encodeURIComponent('YAP \u2014 Early Access');
+
+  var items = document.querySelectorAll('.reveal-item');
+  function check() {
+    var h = window.innerHeight || document.documentElement.clientHeight;
+    for (var i = 0; i < items.length; i++) {
+      var rect = items[i].getBoundingClientRect();
+      if (rect.top < h - 10) {
+        items[i].classList.add('visible');
+      }
+    }
+  }
+  window.addEventListener('scroll', check, false);
+  window.addEventListener('resize', check, false);
+  check();
+  setTimeout(check, 50);
+  setTimeout(check, 200);
+  setTimeout(check, 600);
+  setTimeout(check, 1200);
+  // Brand emoji drag & fling physics — matches app behavior
+  var emoji = document.getElementById('brand-emoji');
+  var hero = document.querySelector('.hero');
+  var bp = { x: 0, y: 0, vx: 0, vy: 0, homeX: 0, homeY: 0, animFrame: null, isHome: true };
+  var emojiW = 0, emojiH = 0;
+  var homeRecorded = false;
+  var placeholder = null;
+
+  function initHome() {
+    if (homeRecorded) return;
+    var heroRect = hero.getBoundingClientRect();
+    var emojiRect = emoji.getBoundingClientRect();
+    emojiW = emojiRect.width;
+    emojiH = emojiRect.height;
+    bp.homeX = emojiRect.left - heroRect.left + emojiW / 2;
+    bp.homeY = emojiRect.top - heroRect.top + emojiH / 2;
+    // Create invisible placeholder to hold layout space
+    placeholder = document.createElement('div');
+    placeholder.style.width = emojiW + 'px';
+    placeholder.style.height = emojiH + 'px';
+    placeholder.style.flexShrink = '0';
+    emoji.parentNode.insertBefore(placeholder, emoji);
+    homeRecorded = true;
+  }
+
+  function positionEmoji(x, y) {
+    emoji.style.position = 'absolute';
+    emoji.style.left = (x - emojiW / 2) + 'px';
+    emoji.style.top = (y - emojiH / 2) + 'px';
+    emoji.style.margin = '0';
+    emoji.style.zIndex = '10';
+  }
+
+  function isAtHome() {
+    return Math.abs(bp.x - bp.homeX) < 5 && Math.abs(bp.y - bp.homeY) < 5;
+  }
+
+  function launchEmoji(startX, startY, vx, vy) {
+    if (bp.animFrame) cancelAnimationFrame(bp.animFrame);
+    bp.x = startX; bp.y = startY; bp.vx = vx; bp.vy = vy; bp.isHome = false;
+    var margin = 16;
+    var boundsLeft = margin;
+    var boundsRight = hero.offsetWidth - margin;
+    var boundsTop = margin;
+
+    var step = function() {
+      bp.vx *= 0.98; bp.vy *= 0.98;
+      bp.x += bp.vx; bp.y += bp.vy;
+      // Bottom boundary = current scroll position + viewport height, relative to hero top
+      var currentScroll = window.scrollY || document.documentElement.scrollTop;
+      var heroTop = hero.offsetTop;
+      var boundsBottom = (currentScroll + window.innerHeight) - heroTop - margin;
+      // Bounce
+      if (bp.x < boundsLeft) { bp.x = boundsLeft; bp.vx = Math.abs(bp.vx) * 0.6; }
+      if (bp.x > boundsRight) { bp.x = boundsRight; bp.vx = -Math.abs(bp.vx) * 0.6; }
+      if (bp.y < boundsTop) { bp.y = boundsTop; bp.vy = Math.abs(bp.vy) * 0.6; }
+      if (bp.y > boundsBottom) { bp.y = boundsBottom; bp.vy = -Math.abs(bp.vy) * 0.6; }
+      var speed = Math.sqrt(bp.vx * bp.vx + bp.vy * bp.vy);
+      if (speed < 0.3) { positionEmoji(bp.x, bp.y); return; }
+      positionEmoji(bp.x, bp.y);
+      bp.animFrame = requestAnimationFrame(step);
+    };
+    bp.animFrame = requestAnimationFrame(step);
+  }
+
+  function returnHome() {
+    if (bp.animFrame) cancelAnimationFrame(bp.animFrame);
+    var startX = bp.x, startY = bp.y;
+    var targetX = bp.homeX, targetY = bp.homeY;
+    var startTime = Date.now();
+    var duration = 400;
+    var step = function() {
+      var elapsed = Date.now() - startTime;
+      var t = Math.min(elapsed / duration, 1);
+      var ease = 1 - Math.pow(1 - t, 3);
+      bp.x = startX + (targetX - startX) * ease;
+      bp.y = startY + (targetY - startY) * ease;
+      positionEmoji(bp.x, bp.y);
+      if (t < 1) {
+        bp.animFrame = requestAnimationFrame(step);
+      } else {
+        bp.isHome = true;
+      }
+    };
+    bp.animFrame = requestAnimationFrame(step);
+  }
+
+  function onDragStart(e) {
+    e.stopPropagation(); e.preventDefault();
+    var touch = e.touches ? e.touches[0] : e;
+    if (bp.animFrame) cancelAnimationFrame(bp.animFrame);
+
+    // First interaction — record home position
+    if (bp.isHome) {
+      initHome();
+      bp.x = bp.homeX; bp.y = bp.homeY;
+    }
+
+    var gestureStartX = touch.clientX;
+    var gestureStartY = touch.clientY;
+    var gestureStartTime = Date.now();
+    var maxMovement = 0;
+
+    bp.dragStart = { x: touch.clientX, y: touch.clientY, origX: bp.x, origY: bp.y, lastX: touch.clientX, lastY: touch.clientY, lastTime: Date.now() };
+    positionEmoji(bp.x, bp.y);
+    emoji.style.cursor = 'grabbing';
+
+    var onMove = function(ev) {
+      ev.preventDefault();
+      var t = ev.touches ? ev.touches[0] : ev;
+      var now = Date.now();
+      var dist = Math.sqrt(Math.pow(t.clientX - gestureStartX, 2) + Math.pow(t.clientY - gestureStartY, 2));
+      if (dist > maxMovement) maxMovement = dist;
+      var dx = t.clientX - bp.dragStart.x;
+      var dy = t.clientY - bp.dragStart.y;
+      bp.vx = (t.clientX - bp.dragStart.lastX) / Math.max(1, now - bp.dragStart.lastTime) * 16;
+      bp.vy = (t.clientY - bp.dragStart.lastY) / Math.max(1, now - bp.dragStart.lastTime) * 16;
+      bp.dragStart.lastX = t.clientX; bp.dragStart.lastY = t.clientY; bp.dragStart.lastTime = now;
+      bp.x = bp.dragStart.origX + dx; bp.y = bp.dragStart.origY + dy;
+      positionEmoji(bp.x, bp.y);
+    };
+
+    var onEnd = function() {
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseup', onEnd);
+      document.removeEventListener('touchmove', onMove);
+      document.removeEventListener('touchend', onEnd);
+      emoji.style.cursor = 'grab';
+
+      // Was this a tap? (barely moved, quick gesture)
+      var wasTap = maxMovement < 15 && (Date.now() - gestureStartTime) < 400;
+
+      if (wasTap) {
+        // If not at home, go home
+        if (!bp.isHome) {
+          returnHome();
+        }
+        return;
+      }
+
+      // It was a drag — fling or settle
+      bp.isHome = false;
+      var speed = Math.sqrt(bp.vx * bp.vx + bp.vy * bp.vy);
+      if (speed < 2) { positionEmoji(bp.x, bp.y); return; }
+      launchEmoji(bp.x, bp.y, bp.vx * 1.5, bp.vy * 1.5);
+    };
+
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onEnd);
+    document.addEventListener('touchmove', onMove, { passive: false });
+    document.addEventListener('touchend', onEnd);
+  }
+
+  emoji.addEventListener('mousedown', onDragStart);
+  emoji.addEventListener('touchstart', onDragStart, { passive: false });
+
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>YAP — Terms of Service</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='50' dominant-baseline='central' text-anchor='middle' font-size='80'>🙄</text></svg>">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=DM+Mono:wght@300;400;500&display=swap');
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --black: #050505; --gold: #ffd93d; --gold-soft: rgba(255,217,61,0.07); --white: #e4e4e4; --mid: #777; --dim: #444; --serif: 'Newsreader', Georgia, 'Times New Roman', serif; --mono: 'DM Mono', 'Courier New', monospace; }
+html { scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: rgba(255,217,61,0.15) transparent; }
+body { background: var(--black); color: var(--white); font-family: var(--serif); overflow-x: hidden; -webkit-font-smoothing: antialiased; opacity: 0; transition: opacity 0.4s ease; }
+body.loaded { opacity: 1; }
+::selection { background: var(--gold); color: var(--black); }
+body::after { content: ''; position: fixed; inset: 0; z-index: 10000; pointer-events: none; opacity: 0.03; background: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 200px; }
+.nav { padding: 32px; display: flex; align-items: center; gap: 12px; max-width: 720px; margin: 0 auto; }
+.nav a { font-family: var(--mono); font-size: 11px; color: var(--dim); text-decoration: none; letter-spacing: 0.8px; transition: color 0.3s ease; }
+.nav a:hover { color: var(--gold); }
+.nav .sep { color: var(--dim); font-size: 10px; }
+.legal { max-width: 720px; margin: 0 auto; padding: 20px 32px 120px; }
+.legal-label { font-family: var(--mono); font-size: 10px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); opacity: 0.55; margin-bottom: 12px; }
+.legal h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 300; letter-spacing: -0.5px; margin-bottom: 8px; }
+.legal .updated { font-family: var(--mono); font-size: 11px; color: var(--dim); letter-spacing: 0.5px; margin-bottom: 56px; }
+.legal h2 { font-size: 20px; font-weight: 400; margin-top: 48px; margin-bottom: 16px; color: var(--white); letter-spacing: -0.2px; }
+.legal h3 { font-size: 16px; font-weight: 400; margin-top: 32px; margin-bottom: 12px; color: var(--white); }
+.legal p { font-size: 15px; font-weight: 300; line-height: 1.85; color: var(--mid); margin-bottom: 16px; }
+.legal p strong { color: var(--white); font-weight: 400; }
+.legal ul { list-style: none; padding: 0; margin-bottom: 16px; }
+.legal ul li { font-size: 15px; font-weight: 300; line-height: 1.85; color: var(--mid); padding-left: 20px; position: relative; margin-bottom: 4px; }
+.legal ul li::before { content: '·'; position: absolute; left: 4px; color: var(--gold); opacity: 0.4; }
+.legal ul li strong { color: var(--white); font-weight: 400; }
+.legal a { color: var(--gold); text-decoration: none; transition: opacity 0.3s ease; }
+.legal a:hover { opacity: 0.7; }
+.legal .caps { font-size: 14px; letter-spacing: 0.2px; line-height: 1.85; }
+.legal hr { border: none; height: 1px; background: rgba(255,255,255,0.04); margin: 48px 0; }
+.legal .effective { font-family: var(--mono); font-size: 11px; color: var(--dim); font-style: italic; margin-top: 48px; }
+footer { padding: 44px 32px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.03); max-width: 720px; margin: 0 auto; width: 100%; }
+.footer-sig { font-family: var(--mono); font-size: 10px; color: var(--dim); letter-spacing: 0.8px; display: flex; align-items: center; gap: 8px; }
+.footer-sig .f-emoji { font-size: 13px; }
+.footer-platform { font-family: var(--mono); font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; }
+.footer-platform a { color: rgba(255,255,255,0.12); text-decoration: none; transition: color 0.3s ease; }
+.footer-platform a:hover { color: var(--gold); }
+@media (max-width: 640px) { .nav { padding: 24px 20px; } .legal { padding: 20px 20px 80px; } footer { flex-direction: column; gap: 12px; text-align: center; padding: 32px 20px; } }
+</style>
+</head>
+<body>
+<nav class="nav"><a href="/">YAP</a><span class="sep">/</span><a href="/terms.html" style="color:var(--mid);">Terms</a></nav>
+<article class="legal">
+<div class="legal-label">Legal</div>
+<h1>Terms of Service</h1>
+<div class="updated">Last Updated: March 28, 2026</div>
+<p>Please read these Terms of Service ("Terms") carefully before using the YAP messaging application ("App," "Services"). By installing or using the App, you agree to these Terms. If you do not agree, do not use the App.</p>
+<h2>1. About the Service</h2>
+<p>YAP is an end-to-end encrypted messaging application with a <strong>local-first architecture</strong>. Your messages are encrypted on your device before they leave your phone, and your data is primarily stored on your device, not on our servers. We want you to own and hold your data — this architecture is how we make that real.</p>
+<h2>2. Eligibility</h2>
+<p>You must be at least 13 years old to use our Services. The minimum age to use our Services without parental approval may be higher in your home country.</p>
+<h2>3. Account Registration</h2>
+<p>To use our Services, you must register by creating a unique @handle and password. No phone number or email is required. An optional recovery email can be provided for account recovery purposes only. You are responsible for maintaining the security of your account credentials.</p>
+<h2>4. Local-First Data Storage &amp; Data Loss</h2>
+<h3>4.1 How Your Data Is Stored</h3>
+<p>YAP stores your messages, contacts, themes, settings, and media files <strong>locally on your device</strong> by default.</p>
+<h3>4.2 Data Loss Disclaimer</h3>
+<p><strong>YOU ACKNOWLEDGE AND AGREE THAT:</strong></p>
+<ul>
+<li>Deleting the App will <strong>permanently and irrecoverably</strong> erase all locally stored data, including messages, contacts, themes, and media.</li>
+<li>If your device is lost, stolen, or damaged, locally stored data <strong>cannot be recovered</strong> by YAP or its developers.</li>
+<li>There is no account recovery mechanism for locally stored data.</li>
+<li>Regular backups to your personal cloud service are strongly recommended. Failure to maintain backups is at your own risk.</li>
+<li>YAP has <strong>no liability whatsoever</strong> for data loss, regardless of cause.</li>
+</ul>
+<h3>4.3 Cloud Backup (Optional)</h3>
+<p>If you enable cloud backup, your data is encrypted on your device before being uploaded to your personal cloud storage (iCloud or Google Drive). YAP does not store your backup data on its own servers and is not responsible for third-party cloud provider availability or performance.</p>
+<h2>5. End-to-End Encryption</h2>
+<h3>5.1 Message Encryption</h3>
+<p>Messages are encrypted end-to-end using the Signal Protocol. Only you and your intended recipient(s) can read message contents.</p>
+<h3>5.2 Message Relay &amp; Temporary Storage</h3>
+<p>YAP uses relay servers solely to deliver encrypted messages. The server temporarily holds encrypted messages it cannot read until the recipient's device retrieves them. Messages are deleted from the server after successful delivery. If the recipient does not come online, undelivered messages are automatically deleted after <strong>30 days</strong>. YAP cannot read, access, or decrypt message contents at any point.</p>
+<h3>5.3 Encryption Limitations</h3>
+<p>No security system is impenetrable. YAP does not guarantee that unauthorized third parties will never be able to defeat our security measures.</p>
+<h2>6. Contact Discovery</h2>
+<p>YAP does <strong>not</strong> upload or access your device's address book. Any contact discovery features use cryptographic hashing to protect the privacy of your contacts.</p>
+<h2>7. User Conduct &amp; Acceptable Use</h2>
+<p>You agree not to use the App to: send spam or unsolicited messages; harass, threaten, or abuse others; distribute illegal content, malware, or harmful material; impersonate others; interfere with or disrupt the service; violate any applicable law; distribute child sexual abuse material (CSAM) or engage in exploitation of minors; engage in fraud, phishing, or other deceptive practices; attempt to reverse-engineer, decompile, or extract the source code of the App; or access or tamper with non-public areas of our systems.</p>
+<h2>8. AI-Powered Features</h2>
+<h3>8.1 AI Generation &amp; Data Sharing with AI Providers</h3>
+<p>AI-powered features (theme generation, meme generation) use third-party AI services. When you use these features, the data you submit is sent to the selected AI provider for processing:</p>
+<ul>
+<li><strong>Theme generation</strong>: Your text prompt is sent to Anthropic (Claude API).</li>
+<li><strong>Meme generation</strong>: Your prompt and uploaded image are sent to either OpenAI (GPT Image API) or Google (Gemini API), depending on which provider you select.</li>
+</ul>
+<p>Do not include sensitive personal information in AI prompts. AI generation fees are charged per use at the rates displayed in the App (currently $0.25 USD per theme generation and $0.10 USD per meme generation, with equivalent pricing in other currencies). Charges are non-refundable. Data is transmitted to AI providers only when you explicitly initiate a generation.</p>
+<h3>8.2 AI Companion</h3>
+<p>AI companion conversations are <strong>not</strong> end-to-end encrypted and are processed by third-party AI models. If you enable the optional "Chat Access" setting, conversation excerpts from your other chats may be sent to the AI provider. Chat Access is opt-in and disabled by default. Do not share sensitive personal information with the AI companion.</p>
+<h3>8.3 AI Content Disclaimer</h3>
+<p>AI-generated content may be inaccurate, inappropriate, or unexpected. YAP does not guarantee the quality or appropriateness of AI-generated content.</p>
+<h2>9. Intellectual Property</h2>
+<p>The App and its original content are owned by YAP and protected by intellectual property laws. Themes you create using YAP's tools are yours.</p>
+<h2>10. Software Updates</h2>
+<p>To enable new features and enhanced functionality, you consent to downloading and installing updates to our Services.</p>
+<h2>11. Fees and Taxes</h2>
+<p>You are responsible for data and mobile carrier fees and taxes associated with the devices on which you use our Services. AI generation fees are charged per use as in-app purchases processed through Apple (App Store) or Google (Play Store). We do not collect or store payment card information.</p>
+<h2>12. International Data Transfer</h2>
+<p>For the purpose of operating our Services, you agree to the transfer of your encrypted information and metadata to countries where we have or use facilities, service providers, or partners, including the United States. Such transfers will be conducted in accordance with applicable data protection laws.</p>
+<h2>13. Disclaimer of Warranties</h2>
+<p class="caps">THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. YAP DOES NOT WARRANT THAT THE APP WILL BE UNINTERRUPTED, ERROR-FREE, OR THAT DATA WILL BE PRESERVED.</p>
+<h2>14. Limitation of Liability</h2>
+<p class="caps">TO THE MAXIMUM EXTENT PERMITTED BY LAW, YAP SHALL NOT BE LIABLE FOR: ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES; ANY LOSS OF DATA REGARDLESS OF CAUSE INCLUDING DEVICE FAILURE, ACCIDENTAL DELETION, SOFTWARE BUGS, OR USER ERROR; ANY DAMAGES ARISING FROM EVENTS BEYOND OUR REASONABLE CONTROL.</p>
+<h2>15. Force Majeure</h2>
+<p>YAP is not liable for any failure or delay in performance caused by events beyond our reasonable control, including natural disasters, war, terrorism, government actions, epidemics, power failures, internet disruptions, or infrastructure failures.</p>
+<h2>16. Indemnification</h2>
+<p>You agree to defend, indemnify, and hold harmless YAP and its affiliates from any claims, damages, or liabilities arising from your use of the App or violation of these Terms.</p>
+<h2>17. Account Deletion</h2>
+<p>You may delete your account at any time through the App (Profile &gt; Account &gt; Delete Account) or by contacting us at <a href="mailto:contact@yap-messenger.com">contact@yap-messenger.com</a>. Upon deletion, your data is removed from our servers within 90 days. Local data on your device remains until you delete it manually. If we disable your account for a violation of these Terms, you will not create another account without our permission.</p>
+<h2>18. Termination</h2>
+<p>We may modify, suspend, or terminate your access to the App at any time for violation of these Terms, creation of harm or legal exposure, or any other reason. Upon termination, the following sections survive: Intellectual Property, Disclaimer of Warranties, Limitation of Liability, Force Majeure, Indemnification, Dispute Resolution, and Governing Law.</p>
+<h2>19. Dispute Resolution</h2>
+<h3>19.1 Time Limit</h3>
+<p class="caps">YOU AND YAP MUST BRING ANY CLAIM WITHIN <strong>ONE YEAR</strong> AFTER THE DISPUTE FIRST AROSE. CLAIMS BROUGHT AFTER ONE YEAR ARE PERMANENTLY BARRED.</p>
+<h3>19.2 Informal Resolution</h3>
+<p>Before filing any formal dispute, you agree to attempt informal resolution by contacting us at <a href="mailto:contact@yap-messenger.com">contact@yap-messenger.com</a>. If unresolved after 30 days, either party may proceed to formal dispute resolution.</p>
+<h3>19.3 Jurisdiction-Specific Provisions</h3>
+<p><strong>Users in the United States or Canada:</strong> You and YAP agree to resolve all disputes through binding individual arbitration, meaning you waive your right to a judge or jury and your right to participate in class actions. You may opt out of this arbitration provision by sending written notice to <a href="mailto:contact@yap-messenger.com">contact@yap-messenger.com</a> within <strong>30 days</strong> of first accepting these Terms. If you opt out, or if arbitration does not apply, disputes will be resolved in the courts specified in Section 20.</p>
+<p><strong>Users in the European Economic Area (EEA):</strong> You may bring proceedings in the courts of your country of residence. Nothing in these Terms affects your statutory rights as a consumer under EU law.</p>
+<p><strong>All other users:</strong> Disputes shall be resolved in the courts specified in Section 20.</p>
+<h2>20. Governing Law</h2>
+<p>These Terms are governed by the laws of the Republic of Kenya. Unless otherwise required by applicable local law or specified in Section 19.3, disputes shall be resolved in the courts of Nairobi, Kenya.</p>
+<h2>21. Changes to Terms</h2>
+<p>We may modify these Terms at any time. Material changes will be notified through the App at least 30 days before taking effect. Continued use after changes constitutes acceptance.</p>
+<h2>22. Severability</h2>
+<p>If any provision is found unenforceable, it shall be modified to the minimum extent necessary. The remaining provisions continue in full force.</p>
+<h2>23. Contact</h2>
+<p><a href="mailto:contact@yap-messenger.com">contact@yap-messenger.com</a></p>
+<hr>
+<p class="effective">By using YAP, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</p>
+</article>
+<footer>
+<div class="footer-sig"><span class="f-emoji">🙄</span><span>&copy; 2026 YAP</span></div>
+<div class="footer-platform"><a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a> &middot; <a href="/faq.html">FAQ</a></div>
+</footer>
+<script>
+if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){document.body.classList.add('loaded')});}else{setTimeout(function(){document.body.classList.add('loaded');},500);}
+setTimeout(function(){document.body.classList.add('loaded');},2000);
+</script>
+</body>
+</html>

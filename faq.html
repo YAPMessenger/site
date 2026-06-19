@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>YAP — FAQ</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='50' dominant-baseline='central' text-anchor='middle' font-size='80'>🙄</text></svg>">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=DM+Mono:wght@300;400;500&display=swap');
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --black: #050505; --gold: #ffd93d; --gold-soft: rgba(255,217,61,0.07); --white: #e4e4e4; --mid: #777; --dim: #444; --serif: 'Newsreader', Georgia, 'Times New Roman', serif; --mono: 'DM Mono', 'Courier New', monospace; }
+html { scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: rgba(255,217,61,0.15) transparent; }
+body { background: var(--black); color: var(--white); font-family: var(--serif); overflow-x: hidden; -webkit-font-smoothing: antialiased; opacity: 0; transition: opacity 0.4s ease; }
+body.loaded { opacity: 1; }
+::selection { background: var(--gold); color: var(--black); }
+body::after { content: ''; position: fixed; inset: 0; z-index: 10000; pointer-events: none; opacity: 0.03; background: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 200px; }
+.nav { padding: 32px; display: flex; align-items: center; gap: 12px; max-width: 720px; margin: 0 auto; }
+.nav a { font-family: var(--mono); font-size: 11px; color: var(--dim); text-decoration: none; letter-spacing: 0.8px; transition: color 0.3s ease; }
+.nav a:hover { color: var(--gold); }
+.nav .sep { color: var(--dim); font-size: 10px; }
+.faq { max-width: 720px; margin: 0 auto; padding: 20px 32px 120px; }
+.faq-label { font-family: var(--mono); font-size: 10px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); opacity: 0.55; margin-bottom: 12px; }
+.faq h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 300; letter-spacing: -0.5px; margin-bottom: 56px; }
+.faq-section { font-family: var(--mono); font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); opacity: 0.4; margin-top: 56px; margin-bottom: 32px; }
+.faq-item { margin-bottom: 40px; }
+.faq-q { font-size: 17px; font-weight: 400; color: var(--white); margin-bottom: 10px; letter-spacing: -0.1px; }
+.faq-a { font-size: 15px; font-weight: 300; line-height: 1.85; color: var(--mid); }
+.faq-a strong { color: var(--white); font-weight: 400; }
+.faq-a a { color: var(--gold); text-decoration: none; transition: opacity 0.3s ease; }
+.faq-a a:hover { opacity: 0.7; }
+.faq hr { border: none; height: 1px; background: rgba(255,255,255,0.04); margin: 56px 0; }
+footer { padding: 44px 32px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.03); max-width: 720px; margin: 0 auto; width: 100%; }
+.footer-sig { font-family: var(--mono); font-size: 10px; color: var(--dim); letter-spacing: 0.8px; display: flex; align-items: center; gap: 8px; }
+.footer-sig .f-emoji { font-size: 13px; }
+.footer-platform { font-family: var(--mono); font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; }
+.footer-platform a { color: rgba(255,255,255,0.12); text-decoration: none; transition: color 0.3s ease; }
+.footer-platform a:hover { color: var(--gold); }
+@media (max-width: 640px) { .nav { padding: 24px 20px; } .faq { padding: 20px 20px 80px; } footer { flex-direction: column; gap: 12px; text-align: center; padding: 32px 20px; } }
+</style>
+</head>
+<body>
+<nav class="nav"><a href="/">YAP</a><span class="sep">/</span><a href="/faq.html" style="color:var(--mid);">FAQ</a></nav>
+<section class="faq">
+<div class="faq-label">Support</div>
+<h1>Frequently Asked Questions</h1>
+
+<div class="faq-section">Release</div>
+
+<div class="faq-item">
+<div class="faq-q">When is YAP launching?</div>
+<div class="faq-a">We're targeting a <strong>Q2 2026</strong> release on both iOS and Android simultaneously. The app is currently in active development.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">Will it be available in my country?</div>
+<div class="faq-a">YAP will be available globally from day one — no geo-blocking. Marketing and localization will roll out in phases, starting with North America and Europe, but anyone can download and use it from launch.</div>
+</div>
+
+<hr>
+
+<div class="faq-section">General</div>
+
+<div class="faq-item">
+<div class="faq-q">What is YAP?</div>
+<div class="faq-a">YAP is a privacy-focused messaging app where you control how everything looks. Every conversation can have its own theme, colors, animations, and style. Your messages are end-to-end encrypted and stored locally on your device — not on our servers.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">Who made YAP?</div>
+<div class="faq-a">One person who vibe coded the whole thing with his AI buddy. There is no team of developers, no customer support department, and no venture capital behind YAP. Just someone who wanted a messaging app that didn't look or store data like most other messaging apps out there.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">Is YAP free?</div>
+<div class="faq-a">Yes. The core messaging experience is completely free with no ads and no subscriptions. AI-powered features are optional — theme generation costs $0.25 and meme generation costs $0.10 per use, charged as consumable in-app purchases.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">How do I create an account?</div>
+<div class="faq-a">Choose a unique @handle and a password (minimum 8 characters). That's it. No phone number, no email address, no social media sign-in required. You can optionally add a recovery email in case you forget your password.</div>
+</div>
+
+<hr>
+
+<div class="faq-section">Privacy &amp; Security</div>
+
+<div class="faq-item">
+<div class="faq-q">Are my messages encrypted?</div>
+<div class="faq-a">Yes. All messages are end-to-end encrypted using the Signal Protocol — the same encryption used by Signal and WhatsApp. Only you and the person you're messaging can read them. Our server cannot decrypt your messages.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">Does YAP store my messages on a server?</div>
+<div class="faq-a">No. Messages are stored locally on your device. Our server temporarily holds encrypted messages in transit until the recipient's device picks them up, then deletes them. Undelivered messages are automatically deleted after 30 days.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">What data does YAP collect?</div>
+<div class="faq-a">The minimum needed to function: your @handle (for identity), a hashed password (for authentication), and encrypted messages in transit. We do not collect your phone number, email, location, contacts list, or usage analytics. See our <a href="/privacy.html">Privacy Policy</a> for the full picture.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">Can YAP read my messages?</div>
+<div class="faq-a">No. End-to-end encryption means we physically cannot read your messages, even if compelled to by law. We don't have the keys.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">What happens if I lose my phone?</div>
+<div class="faq-a">If you haven't set up cloud backup (to your own iCloud or Google Drive), your messages and data are gone permanently. This is the tradeoff of local-first design — your data was never on our servers to begin with. We strongly recommend enabling backups.</div>
+</div>
+
+<hr>
+
+<div class="faq-section">Customization</div>
+
+<div class="faq-item">
+<div class="faq-q">How do I change the look of YAP?</div>
+<div class="faq-a">Tap the gear button in the header bar on the chat list. From there you can choose from preset themes, customize every aspect of the app's appearance, or use AI to generate a custom theme. Changes apply instantly.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">Can different conversations look different?</div>
+<div class="faq-a">Yes — this is the core feature. Every conversation can have its own colors, fonts, animations, background, and more, completely independent of the rest of the app. Your customizations are entirely private — the other person never sees them.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">What are AI themes?</div>
+<div class="faq-a">Describe the vibe you want in words (e.g., "cozy autumn cabin with warm firelight") and YAP's AI generates a complete theme — colors, fonts, patterns, animations, everything. Each generation costs $0.25 and is saved permanently to your collection.</div>
+</div>
+
+<hr>
+
+<div class="faq-section">Account</div>
+
+<div class="faq-item">
+<div class="faq-q">I forgot my password. How do I recover my account?</div>
+<div class="faq-a">If you added a recovery email during sign-up (or later in settings), use the "Forgot password?" option on the sign-in screen. If you didn't add a recovery email and forgot your password, there is no way to recover your account. We cannot reset passwords on your behalf.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">Can I change my @handle?</div>
+<div class="faq-a">No. Your @handle is permanent. This is a deliberate security decision — permanent handles prevent impersonation. Choose carefully during sign-up.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">How do I delete my account?</div>
+<div class="faq-a">Profile &gt; Account &gt; Delete Account. This is permanent and irreversible. Local data is deleted from your device immediately. Server-side data is removed within 90 days.</div>
+</div>
+
+<hr>
+
+<div class="faq-section">Support</div>
+
+<div class="faq-item">
+<div class="faq-q">How do I report a bug or send feedback?</div>
+<div class="faq-a">Email <a href="mailto:contact@yap-messenger.com">contact@yap-messenger.com</a>. For bugs, please include what happened, what you expected, and your device model and OS version.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">How fast will I get a response?</div>
+<div class="faq-a">YAP is built and maintained by one person. Response times vary. Critical bugs are prioritized. Your patience is appreciated.</div>
+</div>
+
+</section>
+<footer>
+<div class="footer-sig"><span class="f-emoji">🙄</span><span>&copy; 2026 YAP</span></div>
+<div class="footer-platform"><a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a> &middot; <a href="/faq.html">FAQ</a></div>
+</footer>
+<script>
+if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){document.body.classList.add('loaded')});}else{setTimeout(function(){document.body.classList.add('loaded');},500);}
+setTimeout(function(){document.body.classList.add('loaded');},2000);
+</script>
+</body>
+</html>
