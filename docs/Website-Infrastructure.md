@@ -101,10 +101,27 @@ git push
 | Field | Value |
 |-------|-------|
 | **Contact address** | contact@yap-messenger.com |
-| **Setup** | *(FILL IN — e.g., Namecheap email forwarding, or external provider)* |
+| **Provider** | **Microsoft 365** (MX → `…mail.protection.outlook.com`; autodiscover CNAME) |
+| **Auth** | SPF ✅ · DMARC ✅ (`p=quarantine`) · DKIM ⬚ not yet (enable in M365 admin → adds 2 CNAMEs) |
 
 This address is referenced in the Privacy Policy, Terms of Service, FAQ, App Store listing, and in-app
 support. It must be active before store submission.
+
+## ⚠️ Email senders — AUTHORIZE BEFORE ADDING
+
+**DMARC is `p=quarantine`** — so **any source that sends mail *as* `@yap-messenger.com` must be
+authorized in DNS first** (added to SPF, or given its own DKIM), or its mail lands in recipients'
+**spam**. Before wiring up *any* new email-sending tool, add a row here and authorize it.
+
+| Sender | Status | Notes |
+|---|---|---|
+| Microsoft 365 (`contact@`) | ✅ authorized | SPF includes `spf.protection.outlook.com` |
+| **Website contact form** | ⬚ planned | realistic soon — authorize its sending service before go-live |
+| **Account-deletion request flow** | ⬚ planned | **Apple App Store requires** a web-accessible account-deletion method; it will likely send confirmation email → authorize its sender before launch |
+| Newsletter / CRM / helpdesk | ⬚ future | authorize before first send if ever added |
+
+> The **account-deletion method** is also a hard **App Store submission requirement** (a feature, not
+> just an email concern) — it belongs in the launch / store-compliance checklist too.
 
 ---
 
