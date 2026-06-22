@@ -70,6 +70,27 @@ git add . && git commit -m "update" && git push
 This address is referenced in the Privacy Policy, Terms of Service, FAQ, App Store listing, and in-app
 support. It must be active before store submission.
 
+## Analytics (Anonymous Aggregated Telemetry)
+
+The site uses **Cloudflare Web Analytics** (free, privacy-first). It is **cookieless**, collects **no PII /
+no personal data**, doesn't track across sites, and reports only aggregate metrics (page views, referrers,
+approximate country, browser). No cookie-consent banner required. Chosen over GA4 (which was removed
+2026-06-23) because GA4 isn't AAT — rationale in the in-app strategy doc
+`prototype/Other Documents/Anonymous Aggregated Telemetry/messaging-app-telemetry-strategy.md`.
+
+**Convention — EVERY page must include the beacon.** Static site, no shared `<head>`/include, so the
+snippet is pasted into each page just before `</body>`. When you add a new page, copy this block in (the
+token is public — safe to commit):
+
+```html
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2ed7255b070d424e94a17fcd6d7331cc"}'></script>
+<!-- End Cloudflare Web Analytics -->
+```
+
+The token + dashboard live in the Cloudflare account (under `contact@`). Disclosed to users in
+`privacy.html` §12 ("This Website"). Currently on all 4 pages: `index`, `faq`, `privacy`, `terms`.
+
 ## ⚠️ Email senders — AUTHORIZE BEFORE ADDING
 
 **DMARC is `p=quarantine`** — so **any source that sends mail *as* `@yap-messenger.com` must be
