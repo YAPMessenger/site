@@ -15,11 +15,14 @@ deliberate exemption, like `prototype`).
 ## Where things live (the parallel — same in every conforming repo)
 | Thing | Location |
 |---|---|
-| Orientation | **`README.md`** at root — purpose + layout map + pointer to this doc |
+| Orientation | **`README.md`** at root — purpose + layout map + **a one-line index of `docs/`** + pointer to this doc |
 | Engineering docs (architecture, plans, audits) | **`docs/engineering/`** |
 | Process docs (setup, onboarding, playbooks) | **`docs/process/`** |
 | Tiny repos | a **flat `docs/`** is fine — don't create empty subfolders just for symmetry |
-| Scripts / tooling | **`scripts/`** at root — *unless* scripts are path-dependent, in which case they stay put and are **named in the README** (e.g. content-hub's hub tooling lives in `_hub/` + `_catalog-parts/`) |
+| **Standalone / loose scripts** | **`scripts/`** at root |
+| **Coupled scripts** (tied to specific data/UI) | stay **co-located** with what they operate on, and are **named in the README** (e.g. content-hub's hub engine lives in `_hub/` + `_catalog-parts/`) |
+| Why-decisions + history | **`docs/DECISIONS.md`** (sibling to prototype's `Yap-v31-Decisions-Log.md`) |
+| Current state / next-session orientation | **`docs/HANDOFF.md`** — *only where active multi-session dev warrants it* (content-hub; app at conversion); stable repos (site) skip it |
 | This doc | **`docs/CONVENTIONS.md`** (identical copy per repo) |
 
 ## Governance (applies everywhere)

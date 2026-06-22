@@ -65,7 +65,7 @@ git add . && git commit -m "update" && git push
 |-------|-------|
 | **Contact address** | contact@yap-messenger.com |
 | **Provider** | Microsoft 365 |
-| **Auth** | SPF ✅ · DMARC ✅ (`p=quarantine`) · DKIM ⬚ not yet (enable in M365 admin → adds 2 CNAMEs) |
+| **Auth** | SPF ✅ · DKIM ✅ (selector1/2 CNAMEs at Namecheap, M365 signing on — 2026-06-22) · DMARC ✅ (`p=quarantine`) |
 
 This address is referenced in the Privacy Policy, Terms of Service, FAQ, App Store listing, and in-app
 support. It must be active before store submission.
