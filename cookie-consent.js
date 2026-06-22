@@ -1,5 +1,5 @@
-/* YAP cookie consent — loads Google Analytics 4 ONLY after the visitor accepts.
-   Decline = no GA, no cookies. Choice remembered in localStorage. */
+/* YAP analytics notice — GA4 runs by default; a dismissible notice lets visitors opt out.
+   Softened from a hard opt-in gate (most visitors never click Accept, so the gate lost the data). */
 (function () {
   var GA_ID = 'G-8K5G3J4Y8X';
   var KEY = 'yap-cookie-consent';
@@ -16,6 +16,14 @@
     gtag('js', new Date());
     gtag('config', GA_ID);
   }
+  function disableGA() { window['ga-disable-' + GA_ID] = true; }
+
+  var choice = get();
+  // GA runs by default; only a prior opt-out suppresses it.
+  if (choice === 'declined') { disableGA(); } else { loadGA(); }
+
+  // The notice shows once, until dismissed ("ok") or opted out ("declined").
+  if (choice === 'ok' || choice === 'declined') return;
 
   function dismiss(bar) { bar.style.opacity = '0'; setTimeout(function () { bar.remove(); }, 300); }
 
@@ -36,17 +44,14 @@
     var bar = document.createElement('div'); bar.id = 'yap-cc';
     bar.innerHTML = '<p>We use analytics cookies to see which pages are useful — no ads, no selling data. '
       + '<a href="/privacy.html">Details</a>.</p>'
-      + '<div class="ga"><button class="dec" type="button">Decline</button>'
-      + '<button class="acc" type="button">Accept</button></div>';
+      + '<div class="ga"><button class="dec" type="button">Opt out</button>'
+      + '<button class="acc" type="button">Got it</button></div>';
     document.body.appendChild(bar);
     requestAnimationFrame(function () { bar.style.opacity = '1'; });
-    bar.querySelector('.acc').onclick = function () { set('accepted'); loadGA(); dismiss(bar); };
-    bar.querySelector('.dec').onclick = function () { set('declined'); dismiss(bar); };
+    bar.querySelector('.acc').onclick = function () { set('ok'); dismiss(bar); };
+    bar.querySelector('.dec').onclick = function () { set('declined'); disableGA(); dismiss(bar); };
   }
 
-  var c = get();
-  if (c === 'accepted') { loadGA(); return; }
-  if (c === 'declined') { return; }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', banner);
   else banner();
 })();

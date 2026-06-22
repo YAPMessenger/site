@@ -77,8 +77,10 @@ customization-first repositioning — richer marketing/audience data + future ad
 privacy treated as an honest floor rather than the headline (see the Decisions Log entry of 2026-06-23).
 Trade-off accepted knowingly: GA4 sets cookies and sends data to Google, so it is NOT cookieless/AAT.
 
-> ✅ **Cookie consent (2026-06-23):** GA4 now loads **only after the visitor accepts** the cookie banner
-> (`/cookie-consent.js`). Decline = no GA, no cookies; the choice is remembered in `localStorage`.
+> ✅ **Analytics notice (2026-06-23):** GA4 runs **by default**; `/cookie-consent.js` shows a dismissible
+> notice ("Got it" / "Opt out"). Opt out sets GA4's `ga-disable` flag + is remembered in `localStorage`.
+> Softened from a hard opt-in gate so the teaser actually captures traffic (incl. competitor recon) — most
+> visitors never click Accept. Lower EU-consent bar, accepted pre-launch; disclosed honestly in `privacy.html` §12.
 
 **Convention — EVERY page must include the consent loader.** GA4 is no longer hard-wired into each page;
 instead each page includes the shared **`/cookie-consent.js`**, which shows the consent banner and loads
