@@ -77,25 +77,21 @@ customization-first repositioning — richer marketing/audience data + future ad
 privacy treated as an honest floor rather than the headline (see the Decisions Log entry of 2026-06-23).
 Trade-off accepted knowingly: GA4 sets cookies and sends data to Google, so it is NOT cookieless/AAT.
 
-> ⚠️ **OPEN follow-up:** GA4's cookies mean an **EU cookie-consent banner** is likely required before any
-> real traffic / launch. Tracked as an open item — not yet implemented.
+> ✅ **Cookie consent (2026-06-23):** GA4 now loads **only after the visitor accepts** the cookie banner
+> (`/cookie-consent.js`). Decline = no GA, no cookies; the choice is remembered in `localStorage`.
 
-**Convention — EVERY page must include the GA4 tag.** Static site, no shared `<head>`/include, so the
-snippet is pasted into each page's `<head>`. When you add a new page, copy this block in:
+**Convention — EVERY page must include the consent loader.** GA4 is no longer hard-wired into each page;
+instead each page includes the shared **`/cookie-consent.js`**, which shows the consent banner and loads
+GA4 **only after the visitor accepts** (Decline = no GA / no cookies; choice remembered). When you add a
+new page, put this one line in `<head>`:
 
 ```html
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8K5G3J4Y8X"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-8K5G3J4Y8X');
-</script>
+<!-- Analytics: GA4, loaded only after cookie consent — see /cookie-consent.js -->
+<script src="/cookie-consent.js" defer></script>
 ```
 
-The GA4 property lives in the Google account (under `contact@`). Disclosed to users in `privacy.html` §12
-("This Website"). Currently on all 4 pages: `index`, `faq`, `privacy`, `terms`.
+The GA4 property (`G-8K5G3J4Y8X`) lives in the Google account (under `contact@`). Disclosed to users in
+`privacy.html` §12 ("This Website"). Loader currently on all 4 pages: `index`, `faq`, `privacy`, `terms`.
 
 ## ⚠️ Email senders — AUTHORIZE BEFORE ADDING
 
